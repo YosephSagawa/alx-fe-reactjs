@@ -1,4 +1,4 @@
-import { UserContext } from "./userContext";
+import { UserContext } from "./components/UserContext";
 import { useContext } from "react";
 function UserDetails() {
   const { name, email } = useContext(UserContext);
