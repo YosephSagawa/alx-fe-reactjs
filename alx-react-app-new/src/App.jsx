@@ -4,6 +4,7 @@ import MainContent from "./components/MainContent.jsx";
 import Footer from "./components/Footer.jsx";
 import UserProfile from "./components/UserProfile.jsx";
 import "./App.css";
+import Counter from "./components/Counter.jsx";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
       <Header />
       <MainContent />
+      <Counter />
       <Footer />
     </>
   );
