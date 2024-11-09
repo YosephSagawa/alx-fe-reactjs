@@ -5,9 +5,9 @@ function Navbar() {
       <nav
         style={{
           backgroundColor: "black",
-          padding: "10px",
+          padding: "20px",
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "end",
         }}
       >
         <ul
@@ -15,18 +15,29 @@ function Navbar() {
             listStyle: "none",
             display: "flex",
             gap: "20px",
-            justifyContent: "start",
+            paddingRight: "20px",
           }}
         >
           <li>
-            <Link to={"/"} style={{ color: "white", textDecoration: "none" }}>
+            <Link
+              to={"/"}
+              style={{
+                color: "white",
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
+            >
               Home
             </Link>
           </li>
           <li>
             <Link
               to={"about"}
-              style={{ color: "white", textDecoration: "none" }}
+              style={{
+                color: "white",
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
             >
               About
             </Link>
@@ -34,7 +45,11 @@ function Navbar() {
           <li>
             <Link
               to={"services"}
-              style={{ color: "white", textDecoration: "none" }}
+              style={{
+                color: "white",
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
             >
               Services
             </Link>
@@ -42,7 +57,11 @@ function Navbar() {
           <li>
             <Link
               to={"contact"}
-              style={{ color: "white", textDecoration: "none" }}
+              style={{
+                color: "white",
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
             >
               Contact
             </Link>
