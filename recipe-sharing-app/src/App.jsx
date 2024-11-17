@@ -17,7 +17,7 @@ function App() {
               <SearchBar />
               <AddRecipeForm />
               <RecipeList />
-              {/* <FavoritesList /> */}
+              <FavoritesList />
               <RecommendationsList />
             </>
           }

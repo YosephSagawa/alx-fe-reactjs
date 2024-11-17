@@ -2,9 +2,9 @@ import useRecipeStore from "./recipeStore";
 
 const FavoritesList = () => {
   const favorites = useRecipeStore((state) =>
-    state.favorites.map((id) =>
-      state.recipes.find((recipe) => recipe.id === id).filter(Boolean)
-    )
+    state.favorites
+      .map((id) => state.recipes.find((recipe) => recipe.id === id))
+      .filter(Boolean)
   );
 
   const removeFavorite = useRecipeStore((state) => state.removeFavorite);
