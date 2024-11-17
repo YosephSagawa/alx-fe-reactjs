@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-const useRecipeStore = create(() => ({
+const useRecipeStore = create((set) => ({
   recipes: [],
   addRecipe: (newRecipe) =>
     set((state) => ({ recipes: [...state.recipes, newRecipe] })),
@@ -12,7 +12,7 @@ const useRecipeStore = create(() => ({
   updateRecipe: (id, updatedRecipe) =>
     set((state) => ({
       recipes: state.recipes.map((recipe) =>
-        recipe.id === id ? updatedRecipe : recipe
+        recipe.id === id ? { ...recipe, ...updatedRecipe } : recipe
       ),
     })),
 }));
