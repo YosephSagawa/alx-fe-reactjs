@@ -9,7 +9,7 @@ const fetchPosts = async () => {
 };
 
 const PostsComponent = () => {
-  const { data, error, isLoading, isError, isFetching } = useQuery(
+  const { data, error, isLoading, isError, isFetching, refetch } = useQuery(
     "posts",
     fetchPosts,
     {
@@ -30,7 +30,15 @@ const PostsComponent = () => {
 
   return (
     <div>
-      {isFetching && <div>Fetching data...</div>}
+      <button
+        onClick={() => {
+          refetch();
+        }}
+        disabled={isFetching}
+      >
+        {isFetching ? "Refreshing..." : "Refetch Posts"}
+      </button>
+
       {data.map((item) => (
         <div key={item.id}>
           <h2>{item.title}</h2>
