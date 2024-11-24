@@ -2,7 +2,7 @@ import { NavLink, Routes, Route } from "react-router-dom";
 import ProfileDetails from "./ProfileDetails";
 import ProfileSettings from "./ProfileSettings";
 
-const Profile = () => {
+const profile = () => {
   return (
     <div>
       <nav>
@@ -23,4 +23,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default profile;

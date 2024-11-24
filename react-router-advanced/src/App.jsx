@@ -8,10 +8,9 @@ import {
 } from "react-router-dom";
 import ProfileDetails from "./components/ProfileDetails";
 import ProfileSettings from "./components/ProfileSettings";
-import ProfileLayout from "./layouts/ProfileLayout";
 import HomeLayout from "./layouts/HomeLayout";
 import Home from "./components/Home";
-import Profile from "./components/Profile";
+import profile from "./components/profile";
 import BlogPost from "./components/BlogPost";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -25,7 +24,7 @@ function App() {
             path="/Profile"
             element={
               <ProtectedRoute>
-                <Profile />
+                <profile />
               </ProtectedRoute>
             }
           >
