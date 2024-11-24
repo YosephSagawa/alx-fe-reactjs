@@ -5,9 +5,9 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <>
-      <QueryProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
         <PostsComponent />
-      </QueryProvider>
+      </QueryClientProvider>
     </>
   );
 }
