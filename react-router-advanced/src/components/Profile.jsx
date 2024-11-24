@@ -1,4 +1,4 @@
-import { Navlink, Routes, Route } from "react-router-dom";
+import { NavLink, Routes, Route } from "react-router-dom";
 import ProfileDetails from "./ProfileDetails";
 import ProfileSettings from "./ProfileSettings";
 
@@ -8,10 +8,10 @@ const Profile = () => {
       <nav>
         <ul>
           <li>
-            <Navlink to="ProfileDetails">ProfileDetails</Navlink>
+            <NavLink to="ProfileDetails">ProfileDetails</NavLink>
           </li>
           <li>
-            <Navlink to="ProfileSettings">ProfileSettings</Navlink>
+            <NavLink to="ProfileSettings">ProfileSettings</NavLink>
           </li>
         </ul>
       </nav>

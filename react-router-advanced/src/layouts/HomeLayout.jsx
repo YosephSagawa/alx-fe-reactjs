@@ -11,6 +11,9 @@ const HomeLayout = () => {
           <li>
             <NavLink to="profile">Profile</NavLink>
           </li>
+          <li>
+            <NavLink to="blog">Blog</NavLink>
+          </li>
         </ul>
       </nav>
       <main>
