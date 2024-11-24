@@ -35,7 +35,7 @@ describe("TodoList Component", () => {
   test("deletes a todo", () => {
     render(<TodoList />);
 
-    const deleteButton = screen.getByText("Delete");
+    const deleteButton = screen.getByText("Delete")[0];
 
     fireEvent.click(deleteButton);
 
