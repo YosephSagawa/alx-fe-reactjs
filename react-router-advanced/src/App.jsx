@@ -13,6 +13,7 @@ import HomeLayout from "./layouts/HomeLayout";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import BlogPost from "./components/BlogPost";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -20,7 +21,14 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeLayout />}>
           <Route index element={<Home />} />
-          <Route path="/Profile" element={<Profile />}>
+          <Route
+            path="/Profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          >
             <Route path="/ProfileDetails" element={<ProfileDetails />} />
             <Route path="/ProfileSettings" element={<ProfileSettings />} />
           </Route>
