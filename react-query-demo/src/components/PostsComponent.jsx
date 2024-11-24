@@ -2,11 +2,23 @@ import { useQuery } from "react-query";
 
 const fetchPosts = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  if (!response.ok) {
+    throw new Error("Network response was not ok");
+  }
   return response.json();
 };
 
 const PostsComponent = () => {
-  const { data, error, isLoading, isError } = useQuery("posts", fetchPosts);
+  const { data, error, isLoading, isError, isFetching } = useQuery(
+    "posts",
+    fetchPosts,
+    {
+      cacheTime: 1000 * 60 * 10,
+      staleTime: 1000 * 60 * 5,
+      refetchOnWindowFocus: true,
+      leepPreviousData: true,
+    }
+  );
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -18,6 +30,7 @@ const PostsComponent = () => {
 
   return (
     <div>
+      {isFetching && <div>Fetching data...</div>}
       {data.map((item) => (
         <div key={item.id}>
           <h2>{item.title}</h2>
