@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
+import recipesData from "../data.json";
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    fetch("/data.json")
-      .then((response) => response.json())
-      .then((data) => setRecipes(data))
-      .catch((error) => console.error("Error fetching recipes:", error));
+    const fetchRecipes = async () => {
+      try {
+        const data = await new Promise((resolve) =>
+          setTimeout(() => resolve(recipesData), 500)
+        );
+        setRecipes(data);
+      } catch (error) {
+        console.error("Error fetching recipes:", error);
+      }
+    };
+    fetchRecipes();
   }, []);
 
   return (
