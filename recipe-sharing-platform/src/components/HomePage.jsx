@@ -19,11 +19,13 @@ const Recipes = () => {
   }, []);
 
   return (
-    <div>
+    <div className="grid sm:grid-cols-3 sm:gap-12 mt-9 grid-col-1 gap-8">
       {recipes.map((recipe) => (
-        <div>
+        <div className="flex flex-col items-center text-center bg-gray-200 p-4 max-w-fit rounded-md shadow-md hover:scale-105 hover:bg-gray-300 transition-all">
           <img src={recipe.image} alt={`Image of ${recipe.title}`} />
-          <h3>{recipe.title}</h3>
+          <h3 className="font-bold text-lg p-4 text-blue-800">
+            {recipe.title}
+          </h3>
           <p>{recipe.summary}</p>
         </div>
       ))}
@@ -33,10 +35,12 @@ const Recipes = () => {
 
 const HomePage = () => {
   return (
-    <>
-      <div>Welcome to our Recipe Sharing Platform</div>
+    <div className="p-4">
+      <h3 className="text-center text-3xl mt-8">
+        Welcome to our Recipe Sharing Platform
+      </h3>
       <Recipes />
-    </>
+    </div>
   );
 };
 
