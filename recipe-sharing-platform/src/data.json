@@ -3,48 +3,188 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://media.istockphoto.com/id/1581084025/photo/plate-with-spaghetti-carbonara-on-a-laid-table.jpg?s=1024x1024&w=is&k=20&c=DZc8mPKV15Ymdi_32EwsiIHKi52K9DXLDct2Ufm_AGg=",
+    "ingredients": [
+      "400g spaghetti",
+      "100g pancetta or bacon",
+      "2 large eggs",
+      "50g grated Parmesan cheese",
+      "2 cloves garlic (optional)",
+      "Salt and black pepper to taste"
+    ],
+    "instructions": [
+      "Cook spaghetti in salted water until al dente.",
+      "In a pan, sauté pancetta or bacon until crispy. Add garlic if using.",
+      "Whisk eggs and Parmesan cheese together in a bowl.",
+      "Drain spaghetti and add to the pan with pancetta.",
+      "Remove from heat, stir in the egg and cheese mixture, and toss until creamy.",
+      "Season with black pepper and serve immediately."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
-    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://via.placeholder.com/150"
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato-based gravy.",
+    "image": "https://media.istockphoto.com/id/1735060474/photo/delicious-creamy-chicken-tikka-masala-surrounded-by-ingredients-close-up-in-a-bowl-horizontal.jpg?s=1024x1024&w=is&k=20&c=5Bh0PSeC9y-FUlLYwDby6T1zOeIIsRgZ_Hs7X-t66IY=",
+    "ingredients": [
+      "500g chicken breast, cubed",
+      "1 cup plain yogurt",
+      "2 tbsp garam masala",
+      "1 tsp turmeric",
+      "1 tsp paprika",
+      "1 onion, finely chopped",
+      "3 garlic cloves, minced",
+      "1 cup tomato puree",
+      "1/2 cup heavy cream",
+      "2 tbsp butter",
+      "Salt to taste"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt, garam masala, turmeric, paprika, and salt for 1 hour.",
+      "Grill or sauté the chicken until cooked through and set aside.",
+      "In a pan, melt butter and sauté onions until golden.",
+      "Add garlic and cook until fragrant, then stir in tomato puree.",
+      "Simmer for 5 minutes, add cream, and mix well.",
+      "Add the cooked chicken and simmer for 10 minutes. Serve with rice or naan."
+    ]
   },
   {
     "id": 3,
     "title": "Vegetable Stir Fry",
     "summary": "A colorful mix of vegetables stir-fried in a savory soy sauce.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://media.istockphoto.com/id/1279276965/photo/kung-pao-tofu-with-mixed-peppers-broccoli-and-scallions.jpg?s=1024x1024&w=is&k=20&c=TtQvYLXsXiIgc-9fl33ElkrQNOai7iYiW04fgvHpAak=",
+    "ingredients": [
+      "1 red bell pepper, sliced",
+      "1 yellow bell pepper, sliced",
+      "1 cup broccoli florets",
+      "1 carrot, julienned",
+      "1/2 cup snap peas",
+      "2 tbsp soy sauce",
+      "1 tbsp sesame oil",
+      "1 clove garlic, minced",
+      "1 tsp grated ginger"
+    ],
+    "instructions": [
+      "Heat sesame oil in a wok or large pan.",
+      "Add garlic and ginger, and stir-fry for 30 seconds.",
+      "Add vegetables and stir-fry over high heat until tender-crisp.",
+      "Add soy sauce and toss to coat evenly.",
+      "Serve hot as a side or over rice/noodles."
+    ]
   },
   {
     "id": 4,
     "title": "Beef Stroganoff",
     "summary": "Tender beef cooked in a creamy mushroom sauce, served over egg noodles.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://media.istockphoto.com/id/1241724902/photo/preparing-vegan-mushroom-stroganoff.jpg?s=1024x1024&w=is&k=20&c=6SM1JDWLYToR3m6d84vX-nm4uDEEX6MZdErHWGC6iSk=",
+    "ingredients": [
+      "500g beef sirloin, sliced thinly",
+      "2 tbsp flour",
+      "1 onion, finely chopped",
+      "1 cup mushrooms, sliced",
+      "1 cup beef stock",
+      "1/2 cup sour cream",
+      "2 tbsp butter",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "Dust beef slices with flour and season with salt and pepper.",
+      "In a pan, melt butter and sear the beef until browned. Remove and set aside.",
+      "Sauté onions and mushrooms in the same pan until softened.",
+      "Add beef stock and simmer for 5 minutes.",
+      "Return the beef to the pan and stir in sour cream.",
+      "Simmer for 10 minutes and serve over cooked egg noodles."
+    ]
   },
   {
     "id": 5,
     "title": "Margarita Pizza",
     "summary": "A classic pizza topped with fresh tomatoes, mozzarella, and basil.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://media.istockphoto.com/id/1518606270/photo/directly-above-freshly-baked-pizza-margherita.jpg?s=1024x1024&w=is&k=20&c=Hp73r92QufUgny13MtI3JQg98ZTHxKafG1XiiTPTb00=",
+    "ingredients": [
+      "1 pizza dough",
+      "1/2 cup tomato sauce",
+      "200g fresh mozzarella, sliced",
+      "2 fresh tomatoes, sliced",
+      "Fresh basil leaves",
+      "Olive oil"
+    ],
+    "instructions": [
+      "Preheat oven to 250°C (480°F).",
+      "Spread tomato sauce evenly over the pizza dough.",
+      "Top with sliced mozzarella and fresh tomatoes.",
+      "Bake for 10-12 minutes or until the crust is golden.",
+      "Add fresh basil leaves and drizzle with olive oil before serving."
+    ]
   },
   {
     "id": 6,
     "title": "Shrimp Scampi",
     "summary": "Succulent shrimp sautéed in garlic butter and white wine, served over pasta.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://media.istockphoto.com/id/469311080/photo/jumbo-shrimp-scampi-sauteeing-in-butter-and-olive-oil.jpg?s=1024x1024&w=is&k=20&c=hubOt7GiPVDHgpSEWcl3s-oHqH1d5Mv-3OIilpcsAD4=",
+    "ingredients": [
+      "500g shrimp, peeled and deveined",
+      "3 cloves garlic, minced",
+      "1/2 cup white wine",
+      "1/4 cup butter",
+      "1/4 cup olive oil",
+      "1/4 cup chopped parsley",
+      "Salt and red pepper flakes to taste",
+      "200g pasta"
+    ],
+    "instructions": [
+      "Cook pasta in salted water and set aside.",
+      "Heat olive oil and butter in a pan.",
+      "Add garlic and sauté until fragrant.",
+      "Add shrimp and cook until pink on both sides.",
+      "Pour in white wine, simmer for 3-4 minutes, and toss with pasta.",
+      "Garnish with parsley and serve immediately."
+    ]
   },
   {
     "id": 7,
     "title": "Greek Salad",
     "summary": "A refreshing salad with cucumbers, tomatoes, olives, feta cheese, and olive oil.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://media.istockphoto.com/id/1670305570/photo/greek-salad.jpg?s=1024x1024&w=is&k=20&c=xK3pFbvVFcbEbUMiOau-HhZLdMZKkYkOwyOH6Ia1GkU=",
+    "ingredients": [
+      "2 cucumbers, sliced",
+      "4 tomatoes, chopped",
+      "1/2 cup Kalamata olives",
+      "200g feta cheese, cubed",
+      "1 red onion, sliced",
+      "2 tbsp olive oil",
+      "1 tsp dried oregano",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "Combine cucumbers, tomatoes, olives, and onion in a large bowl.",
+      "Add feta cheese cubes on top.",
+      "Drizzle with olive oil and sprinkle with oregano, salt, and pepper.",
+      "Toss gently and serve chilled."
+    ]
   },
   {
     "id": 8,
     "title": "Chocolate Lava Cake",
     "summary": "A rich and gooey chocolate cake with a molten center, perfect for dessert.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://media.istockphoto.com/id/1499766130/photo/chocolate-fondant-lava-cake.jpg?s=1024x1024&w=is&k=20&c=qwcrHw2tVzeQdx2MOdwYYTNdxzWNopqGQ9qk4p5dFa4=",
+    "ingredients": [
+      "100g dark chocolate",
+      "100g butter",
+      "2 eggs",
+      "2 egg yolks",
+      "50g sugar",
+      "50g flour",
+      "Butter and cocoa powder for greasing"
+    ],
+    "instructions": [
+      "Preheat oven to 220°C (430°F).",
+      "Melt chocolate and butter together in a heatproof bowl.",
+      "Whisk eggs, yolks, and sugar until light and fluffy.",
+      "Fold in melted chocolate mixture and sifted flour.",
+      "Grease ramekins with butter and dust with cocoa powder.",
+      "Fill ramekins with batter and bake for 10-12 minutes.",
+      "Serve warm with ice cream or whipped cream."
+    ]
   }
 ]

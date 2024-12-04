@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import recipesData from "../data.json";
+import { NavLink } from "react-router-dom";
 
 const Recipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -21,13 +22,17 @@ const Recipes = () => {
   return (
     <div className="grid sm:grid-cols-2 sm:gap-8 mt-9 grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-12">
       {recipes.map((recipe) => (
-        <div className="flex flex-col items-center text-center bg-gray-200 p-4 max-w-full rounded-md shadow-md hover:scale-105 hover:bg-gray-300 transition-all">
+        <NavLink
+          key={recipe.id}
+          to={`/recipes/${recipe.id}`}
+          className="flex flex-col items-center text-center bg-gray-200 p-4 max-w-full rounded-md shadow-md hover:scale-105 hover:bg-gray-300 transition-all"
+        >
           <img src={recipe.image} alt={`Image of ${recipe.title}`} />
           <h3 className="font-bold text-lg p-4 text-blue-800">
             {recipe.title}
           </h3>
           <p>{recipe.summary}</p>
-        </div>
+        </NavLink>
       ))}
     </div>
   );
