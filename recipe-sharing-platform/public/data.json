@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 3,
+    "title": "Vegetable Stir Fry",
+    "summary": "A colorful mix of vegetables stir-fried in a savory soy sauce.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 4,
+    "title": "Beef Stroganoff",
+    "summary": "Tender beef cooked in a creamy mushroom sauce, served over egg noodles.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 5,
+    "title": "Margarita Pizza",
+    "summary": "A classic pizza topped with fresh tomatoes, mozzarella, and basil.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 6,
+    "title": "Shrimp Scampi",
+    "summary": "Succulent shrimp sautéed in garlic butter and white wine, served over pasta.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 7,
+    "title": "Greek Salad",
+    "summary": "A refreshing salad with cucumbers, tomatoes, olives, feta cheese, and olive oil.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 8,
+    "title": "Chocolate Lava Cake",
+    "summary": "A rich and gooey chocolate cake with a molten center, perfect for dessert.",
+    "image": "https://via.placeholder.com/150"
+  }
+]
