@@ -37,9 +37,9 @@ const RecipeDetail = () => {
     <div>
       <h1 className="text-5xl text-center">{title}</h1>
       <p className="text-center my-7 text-xl">{summary}</p>
-      <div className="flex">
-        <img src={image} alt={title} className="w-1/2 h-auto" />
-        <div className="flex flex-col mx-auto items-center justify-center">
+      <div className="flex flex-col lg:flex-row items-center ">
+        <img src={image} alt={title} className="w-full mb sm:w-1/2 h-auto" />
+        <div className="flex flex-col mx-auto items-center justify-center bg-gray-200 p-12 max-w-full rounded-md shadow-md">
           <h2 className="text-center my-7 text-2xl text-blue-800 font-semibold">
             Ingredients
           </h2>
