@@ -4,12 +4,13 @@ const AddRecipeForm = () => {
   const [data, setData] = useState({
     title: "",
     ingredients: "",
-    instructions: "",
+    steps: "",
   });
   const [error, setError] = useState("");
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const value = e.target.value;
+    const name = e.target.name;
 
     setData((prevState) => ({ ...prevState, [name]: value }));
 
@@ -61,12 +62,12 @@ const AddRecipeForm = () => {
           value={data.ingredients}
           onChange={handleChange}
         />
-        <label htmlFor="instructions">Instructions:</label>
+        <label htmlFor="instructions">Steps:</label>
         <input
           type="text"
           id="instructions"
           name="instructions"
-          value={data.instructions}
+          value={data.steps}
           onChange={handleChange}
         />
         <button type="submit">Add Recipe</button>
