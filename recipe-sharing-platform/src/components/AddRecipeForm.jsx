@@ -6,7 +6,7 @@ const AddRecipeForm = () => {
     ingredients: "",
     steps: "",
   });
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState("");
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -15,27 +15,27 @@ const AddRecipeForm = () => {
     setData((prevState) => ({ ...prevState, [name]: value }));
 
     if (name === "title" && value.length < 3) {
-      setError("Title must be at least 3 characters long");
+      setErrors("Title must be at least 3 characters long");
     } else {
-      setError("");
+      setErrors("");
     }
 
     if (name === "ingredients" && value.length < 3) {
-      setError("Ingredients must be at least 3 characters long");
+      setErrors("Ingredients must be at least 3 characters long");
     } else {
-      setError("");
+      setErrors("");
     }
 
     if (name === "instructions" && value.length < 3) {
-      setError("Instructions must be at least 3 characters long");
+      setErrors("Instructions must be at least 3 characters long");
     } else {
-      setError("");
+      setErrors("");
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (error) {
+    if (errors) {
       alert("Please fill out all the fields appropriately.");
       return;
     }
@@ -55,7 +55,7 @@ const AddRecipeForm = () => {
           onChange={handleChange}
         />
         <label htmlFor="imgredients">Ingredients:</label>
-        <input
+        <textarea
           type="text"
           id="ingredients"
           name="ingredients"
@@ -63,10 +63,10 @@ const AddRecipeForm = () => {
           onChange={handleChange}
         />
         <label htmlFor="instructions">Steps:</label>
-        <input
+        <textarea
           type="text"
-          id="instructions"
-          name="instructions"
+          id="steps"
+          name="steps"
           value={data.steps}
           onChange={handleChange}
         />
