@@ -10,7 +10,8 @@ const AddRecipeForm = () => {
   const [validate, setValidate] = useState(false);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const value = e.target.value;
+    const name = e.target.name;
 
     // Update form data
     setData((prevState) => ({ ...prevState, [name]: value }));
