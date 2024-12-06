@@ -35,27 +35,35 @@ const RecipeDetail = () => {
   const { title, summary, image, ingredients, instructions } = foundRecipe;
   return (
     <div>
-      <h1 className="text-5xl text-center">{title}</h1>
+      <h1 className="text-5xl text-center mt-8">{title}</h1>
       <p className="text-center my-7 text-xl">{summary}</p>
       <div className="flex flex-col lg:flex-row items-center ">
-        <img src={image} alt={title} className="w-full mb sm:w-1/2 h-auto" />
-        <div className="flex flex-col mx-auto items-center justify-center bg-gray-200 p-12 max-w-full rounded-md shadow-md">
-          <h2 className="text-center my-7 text-2xl text-blue-800 font-semibold">
-            Ingredients
-          </h2>
-          <ul>
-            {ingredients.map((ingredient, index) => (
-              <li key={index}>{ingredient}</li>
-            ))}
-          </ul>
-          <h2 className="text-center my-7 text-2xl text-blue-800 font-semibold">
-            Instructions
-          </h2>
-          <ol className="list-decimal">
-            {instructions.map((instruction, index) => (
-              <li key={index}>{instruction}</li>
-            ))}
-          </ol>
+        <img
+          src={image}
+          alt={title}
+          className="w-full mb sm:w-full lg:w-1/2 h-auto"
+        />
+        <div className="flex flex-col sm:flex-row sm:gap-12 sm:items-start mx-auto items-center justify-center bg-gray-200 p-12 max-w-full rounded-md shadow-md">
+          <div>
+            <h2 className="text-center my-7 text-2xl text-blue-800 font-semibold">
+              Ingredients
+            </h2>
+            <ul>
+              {ingredients.map((ingredient, index) => (
+                <li key={index}>{ingredient}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="sm:w-[60%]">
+            <h2 className="text-center my-7 text-2xl text-blue-800 font-semibold">
+              Instructions
+            </h2>
+            <ol className="list-decimal">
+              {instructions.map((instruction, index) => (
+                <li key={index}>{instruction}</li>
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
     </div>
