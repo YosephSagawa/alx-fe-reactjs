@@ -74,7 +74,7 @@ const AddRecipeForm = () => {
           name="title"
           value={data.title}
           onChange={handleChange}
-          className="rounded-sm border mb-2 border-black"
+          className="rounded-sm border mb-2 border-black shadow-md"
         />
         {errors.title && <p style={{ color: "red" }}>{errors.title}</p>}
 
@@ -84,7 +84,7 @@ const AddRecipeForm = () => {
           name="ingredients"
           value={data.ingredients}
           onChange={handleChange}
-          className="rounded-sm border mb-2 border-black"
+          className="rounded-sm border mb-2 border-black shadow-md"
         />
         {errors.ingredients && (
           <p style={{ color: "red" }}>{errors.ingredients}</p>
@@ -96,7 +96,7 @@ const AddRecipeForm = () => {
           name="steps"
           value={data.steps}
           onChange={handleChange}
-          className="rounded-sm border border-black mb-2"
+          className="rounded-sm border border-black mb-2 shadow-md"
         />
         {errors.steps && <p style={{ color: "red" }}>{errors.steps}</p>}
 
