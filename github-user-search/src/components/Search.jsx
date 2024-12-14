@@ -7,6 +7,8 @@ function Search() {
   const [error, setError] = useState(false);
   const [userData, setUserData] = useState(null);
 
+  const error_message = "Looks like we cant find the user";
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!searchTerm) return;
@@ -44,7 +46,7 @@ function Search() {
       </form>
       <div>
         {loading && <p>Loading...</p>}
-        {error && <p>Looks like we can't find the user</p>}
+        {error && <p>{error_message}</p>}
         {userData && (
           <div>
             <img src={userData.avatar_url} alt={userData.login} width="100" />
