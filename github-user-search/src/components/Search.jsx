@@ -1,77 +1,229 @@
+// import { useState } from "react";
+// import fetchUserData from "../services/githubService";
+// import fetchUserDetails from "../services/githubDetailService";
+
+// function Search() {
+//   const [searchTerm, setSearchTerm] = useState("");
+//   const [location, setLocation] = useState("");
+//   const [minRepos, setMinRepos] = useState("");
+//   const [loading, setLoading] = useState(false);
+//   const [error, setError] = useState(false);
+//   const [users, setUsers] = useState([]);
+//   const [page, setPage] = useState(1);
+//   const [hasMore, setHasMore] = useState(true);
+
+//   const error_message = "Looks like we cant find the user";
+
+//   const handleSubmit = async (event) => {
+//     event.preventDefault();
+//     if (!searchTerm && !location && !minRepos) return;
+
+//     setLoading(true);
+//     setError(false);
+//     setUsers([]);
+//     setPage(1);
+//     setHasMore(true);
+
+//     try {
+//       const query = buildQuery({ searchTerm, location, minRepos });
+//       const data = await fetchUserData(query, 1);
+//       setUsers(await fetchDetailedUsers(data.items));
+//       setHasMore(data.total_count > data.items.length);
+//     } catch (error) {
+//       console.error("Error:", error);
+//       setError(true);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   const buildQuery = ({ searchTerm, location, minRepos }) => {
+//     let query = "";
+//     if (searchTerm) query += `${searchTerm} `;
+//     if (location) query += `location:${location} `;
+//     if (minRepos) query += `repos:>${minRepos}`;
+//     return query.trim();
+//   };
+
+//   const fetchDetailedUsers = async (users) => {
+//     const detailedUsers = await Promise.all(
+//       users.map(async (user) => {
+//         try {
+//           const userDetails = await fetchUserDetails(user.login);
+//           return { ...user, ...userDetails };
+//         } catch {
+//           return user;
+//         }
+//       })
+//     );
+//     return detailedUsers;
+//   };
+
+//   const loadMore = async () => {
+//     if (!hasMore) return;
+
+//     setLoading(true);
+//     try {
+//       const query = buildQuery({ searchTerm, location, minRepos });
+//       const data = await fetchUserData(query, page + 1);
+//       const moreUsers = await fetchDetailedUsers(data.items);
+//       setUsers((prev) => [...prev, ...moreUsers]);
+//       setPage(page + 1);
+//       setHasMore(data.total_count > users.length + moreUsers.length);
+//     } catch (error) {
+//       console.error("Error:", error);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return (
+//     <div className="p-4 max-w-4xl mx-auto mt-12">
+//       <h1 className="text-4xl font-bold text-center mb-12">
+//         Search GitHub Users
+//       </h1>
+//       <form
+//         onSubmit={handleSubmit}
+//         className="flex flex-col space-y-4 sm:space-x-4 sm:flex-row"
+//       >
+//         <input
+//           type="text"
+//           placeholder="Enter GitHub username"
+//           value={searchTerm}
+//           onChange={(e) => setSearchTerm(e.target.value)}
+//           className="w-full border p-2 rounded sm:mt-4 sm:ml-4"
+//         />
+//         <input
+//           type="text"
+//           placeholder="Enter location"
+//           value={location}
+//           onChange={(e) => setLocation(e.target.value)}
+//           className="w-full border p-2 rounded"
+//         />
+//         <input
+//           type="number"
+//           placeholder="Minimum repositories"
+//           value={minRepos}
+//           onChange={(e) => setMinRepos(e.target.value)}
+//           className="w-full border p-2 rounded"
+//         />
+//         <button
+//           type="submit"
+//           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+//         >
+//           Search
+//         </button>
+//       </form>
+//       <div className="mt-6">
+//         <h1 className="text-2xl font-bold mb-4">Search Results</h1>
+//         {loading && <p>Loading...</p>}
+//         {error && <p>{error_message}</p>}
+//         {users.length > 0 && (
+//           <ul className="space-y-6">
+//             {users.map((user) => (
+//               <li
+//                 key={user.id}
+//                 className="border p-4 rounded flex justify-between items-center shadow-md "
+//               >
+//                 <div>
+//                   <img
+//                     src={user.avatar_url}
+//                     alt={user.login}
+//                     className="w-16 h-16 rounded-full"
+//                   />
+//                   <h3 className="text-lg font-bold">{user.login}</h3>
+//                   <h1>ID: {user.id}</h1>
+//                   <p>Location: {user.location || "Not provided"}</p>
+//                   <p>Repositories: {user.public_repos || "N/A"}</p>
+//                 </div>
+//                 <button className="bg-blue-500 text-white px-4 py-2 rounded  hover:bg-blue-600">
+//                   <a
+//                     href={user.html_url}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                   >
+//                     View Profile
+//                   </a>
+//                 </button>
+//               </li>
+//             ))}
+//           </ul>
+//         )}
+//         {hasMore && !loading && (
+//           <button
+//             onClick={loadMore}
+//             className="bg-blue-500 text-white px-4 py-2 mt-4 rounded self-center hover:bg-blue-600"
+//           >
+//             Load More
+//           </button>
+//         )}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default Search;
+
 import { useState } from "react";
-import fetchUserData from "../services/githubService";
-import fetchUserDetails from "../services/githubDetailService";
+import fetchUserDetails from "../services/githubService";
 
 function Search() {
   const [searchTerm, setSearchTerm] = useState("");
   const [location, setLocation] = useState("");
   const [minRepos, setMinRepos] = useState("");
+  const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [users, setUsers] = useState([]);
-  const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-
-  const error_message = "Looks like we cant find the user";
+  const [page, setPage] = useState(1);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     if (!searchTerm && !location && !minRepos) return;
 
     setLoading(true);
     setError(false);
-    setUsers([]);
-    setPage(1);
-    setHasMore(true);
+    setUsers([]); // Clear previous results
+    setPage(1); // Reset pagination
 
     try {
-      const query = buildQuery({ searchTerm, location, minRepos });
-      const data = await fetchUserData(query, 1);
-      setUsers(await fetchDetailedUsers(data.items));
-      setHasMore(data.total_count > data.items.length);
+      const data = await fetchUserDetails({
+        searchTerm,
+        location,
+        minRepos,
+        page: 1,
+      });
+
+      setUsers(data.items); // Populate with fetched users
+      setHasMore(data.total_count > data.items.length); // Check if more results are available
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error fetching users:", error);
       setError(true);
     } finally {
       setLoading(false);
     }
   };
 
-  const buildQuery = ({ searchTerm, location, minRepos }) => {
-    let query = "";
-    if (searchTerm) query += `${searchTerm} `;
-    if (location) query += `location:${location} `;
-    if (minRepos) query += `repos:>${minRepos}`;
-    return query.trim();
-  };
-
-  const fetchDetailedUsers = async (users) => {
-    const detailedUsers = await Promise.all(
-      users.map(async (user) => {
-        try {
-          const userDetails = await fetchUserDetails(user.login);
-          return { ...user, ...userDetails };
-        } catch {
-          return user;
-        }
-      })
-    );
-    return detailedUsers;
-  };
-
   const loadMore = async () => {
-    if (!hasMore) return;
+    if (!hasMore || loading) return;
 
     setLoading(true);
     try {
-      const query = buildQuery({ searchTerm, location, minRepos });
-      const data = await fetchUserData(query, page + 1);
-      const moreUsers = await fetchDetailedUsers(data.items);
-      setUsers((prev) => [...prev, ...moreUsers]);
-      setPage(page + 1);
-      setHasMore(data.total_count > users.length + moreUsers.length);
+      const nextPage = page + 1;
+      const data = await fetchUserDetails({
+        searchTerm,
+        location,
+        minRepos,
+        page: nextPage,
+      });
+
+      setUsers((prev) => [...prev, ...data.items]); // Append new results
+      setHasMore(data.total_count > users.length + data.items.length); // Check for more results
+      setPage(nextPage);
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error loading more users:", error);
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -80,29 +232,29 @@ function Search() {
   return (
     <div className="p-4 max-w-4xl mx-auto mt-12">
       <h1 className="text-4xl font-bold text-center mb-12">
-        Search GitHub Users
+        Advanced GitHub User Search
       </h1>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col space-y-4 sm:space-x-4 sm:flex-row"
+        className="space-y-4 sm:space-y-0 sm:space-x-4 sm:flex"
       >
         <input
           type="text"
-          placeholder="Enter GitHub username"
+          placeholder="GitHub username"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full border p-2 rounded sm:mt-4 sm:ml-4"
+          className="w-full border p-2 rounded"
         />
         <input
           type="text"
-          placeholder="Enter location"
+          placeholder="Location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           className="w-full border p-2 rounded"
         />
         <input
           type="number"
-          placeholder="Minimum repositories"
+          placeholder="Minimum Repositories"
           value={minRepos}
           onChange={(e) => setMinRepos(e.target.value)}
           className="w-full border p-2 rounded"
@@ -115,44 +267,39 @@ function Search() {
         </button>
       </form>
       <div className="mt-6">
-        <h1 className="text-2xl font-bold mb-4">Search Results</h1>
         {loading && <p>Loading...</p>}
-        {error && <p>{error_message}</p>}
-        {users.length > 0 && (
-          <ul className="space-y-6">
-            {users.map((user) => (
-              <li
-                key={user.id}
-                className="border p-4 rounded flex justify-between items-center shadow-md "
+        {error && <p>Error fetching users. Please try again.</p>}
+        <ul className="space-y-4">
+          {users.map((user) => (
+            <li
+              key={user.id}
+              className="border p-4 rounded flex justify-between items-center"
+            >
+              <div>
+                <img
+                  src={user.avatar_url}
+                  alt={user.login}
+                  className="w-16 h-16 rounded-full"
+                />
+                <h3 className="text-lg font-bold">{user.login}</h3>
+                <p>Location: {user.location || "N/A"}</p>
+                <p>Repositories: {user.public_repos || "N/A"}</p>
+              </div>
+              <a
+                href={user.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white px-4 py-2 rounded"
               >
-                <div>
-                  <img
-                    src={user.avatar_url}
-                    alt={user.login}
-                    className="w-16 h-16 rounded-full"
-                  />
-                  <h3 className="text-lg font-bold">{user.login}</h3>
-                  <h1>ID: {user.id}</h1>
-                  <p>Location: {user.location || "Not provided"}</p>
-                  <p>Repositories: {user.public_repos || "N/A"}</p>
-                </div>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded  hover:bg-blue-600">
-                  <a
-                    href={user.html_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    View Profile
-                  </a>
-                </button>
-              </li>
-            ))}
-          </ul>
-        )}
+                View Profile
+              </a>
+            </li>
+          ))}
+        </ul>
         {hasMore && !loading && (
           <button
             onClick={loadMore}
-            className="bg-blue-500 text-white px-4 py-2 mt-4 rounded self-center hover:bg-blue-600"
+            className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
           >
             Load More
           </button>
