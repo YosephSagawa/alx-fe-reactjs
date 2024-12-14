@@ -1,9 +1,11 @@
 import axios from "axios";
 
-const fetchUserData = async (username) => {
+const fetchUserDetails = async (query, page = 1) => {
   try {
     const response = await axios.get(
-      `https://api.github.com/users/${username}`
+      `https://api.github.com/search/users?q=${encodeURIComponent(
+        query
+      )}&page=${page}&per_page=10`
     );
     console.log(response.data);
     return response.data;
@@ -13,4 +15,4 @@ const fetchUserData = async (username) => {
   }
 };
 
-export default fetchUserData;
+export default fetchUserDetails;
