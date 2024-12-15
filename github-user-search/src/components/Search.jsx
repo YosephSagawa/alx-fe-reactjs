@@ -201,8 +201,8 @@ function Search() {
       const detailedUsers = await fetchDetailedUsers(data.items);
       setUsers(detailedUsers);
       setHasMore(data.total_count > data.items.length);
-    } catch (error) {
-      console.error("Error fetching users:", error);
+    } catch {
+      // console.error("Error fetching users:", error);
       setError(true);
     } finally {
       setLoading(false);
@@ -215,8 +215,8 @@ function Search() {
         try {
           const userDetails = await fetchUserDetails(user.login);
           return { ...user, ...userDetails };
-        } catch (error) {
-          console.error(`Error fetching details for ${user.login}:`, error);
+        } catch {
+          // console.error(`Error fetching details for ${user.login}:`, error);
           return user;
         }
       })
@@ -240,8 +240,8 @@ function Search() {
       setUsers((prev) => [...prev, ...moreUsers]);
       setPage(page + 1);
       setHasMore(data.total_count > users.length + moreUsers.length);
-    } catch (error) {
-      console.error("Error loading more users:", error);
+    } catch {
+      // console.error("Error loading more users:", error);
       setError(true);
     } finally {
       setLoading(false);
@@ -300,6 +300,7 @@ function Search() {
                     src={user.avatar_url}
                     alt={user.login}
                     className="w-16 h-16 rounded-full"
+                    loading="lazy"
                   />
                   <h3 className="text-lg font-bold">{user.login}</h3>
                   <h1>ID: {user.id}</h1>
