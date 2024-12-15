@@ -96,7 +96,7 @@ function Search() {
           placeholder="Enter GitHub username"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full border p-2 rounded sm:mt-4 sm:ml-4"
+          className="w-full border p-2 rounded sm:mt-4"
         />
         <input
           type="text"
@@ -154,7 +154,7 @@ function Search() {
             ))}
           </ul>
         )}
-        {hasMore && !loading && (
+        {hasMore && !loading && users.length > 0 && (
           <button
             onClick={loadMore}
             className="bg-blue-500 text-white px-4 py-2 mt-4 rounded hover:bg-blue-600"
