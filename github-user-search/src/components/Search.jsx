@@ -262,7 +262,7 @@ function Search() {
           placeholder="Enter GitHub username"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full border p-2 rounded"
+          className="w-full border p-2 rounded sm:mt-4 sm:ml-4"
         />
         <input
           type="text"
