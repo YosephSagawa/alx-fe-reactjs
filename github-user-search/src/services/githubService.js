@@ -31,7 +31,6 @@ const fetchUserData = async ({ searchTerm, location, minRepos, page = 1 }) => {
         query.trim()
       )}&page=${page}&per_page=10`
     );
-    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error("Error fetching user data:", error);
