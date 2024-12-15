@@ -12,7 +12,7 @@ function Search() {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
 
-  const error_message = "Looks like we can't find the user.";
+  const error_message = "Looks like we cant find the user";
 
   const handleSubmit = async (event) => {
     event.preventDefault();
